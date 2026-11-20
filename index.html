@@ -510,7 +510,7 @@ function printDoc(title,body){let p=document.getElementById('printArea');p.inner
 function printVoucher(key){let v=db.vouchers.find(x=>x.id===key);if(!v)return;printDoc('BAUCER PEMBAYARAN',`<p>No. Baucer: <b>${esc(v.number)}</b> &nbsp; Tarikh: ${esc(v.date)}</p><p>Dibayar kepada: <b>${esc(v.payee)}</b></p><p>Agensi / Dana: ${esc(v.agency)}</p><p>Tujuan: ${esc(v.purpose)}</p><p>Kaedah: ${esc(v.method)}</p><h2>Jumlah: ${money(v.amount)}</h2><p>Disediakan oleh: ${esc(v.prepared)}</p><p>Disahkan oleh: ${esc(v.verified)}</p>`)}
 function printReceipt(key){let r=db.recipients.find(x=>x.id===key);if(!r)return;printDoc('AKUAN PENERIMAAN WANG / BARANG',`<p>Saya, <b>${esc(r.name)}</b>, No. Kad Pengenalan ${esc(r.ic)}, mengaku telah menerima:</p><p>Jenis: <b>${esc(r.kind)}</b></p><p>Butiran: <b>${esc(r.item)}</b></p><p>Kuantiti: <b>${esc(r.quantity)}</b> &nbsp; Nilai: <b>${money(r.value)}</b></p><p>Program / Agensi: ${esc(r.agency)}</p><p>Tarikh penerimaan: ${esc(r.date)}</p><p>Catatan: ${esc(r.notes)}</p><p>Saya mengesahkan maklumat penerimaan di atas adalah benar.</p>`)}
 render();
- const SUPABASE_URL='https://apmdehgqoakgqzqpiytq.supabase.co';
+ const SUPABASE_URL='https://apmdehgqoakgqzqpiytq.supabase.co/rest/v1/';
 const SUPABASE_ANON_KEY='sb_publishable_T_-tZ83WrAMi0MmyJxUHwg_mfQnvgoL';
 </script>
 </body></html>
